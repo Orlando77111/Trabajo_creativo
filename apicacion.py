@@ -69,10 +69,28 @@ def abrir_notas():
 
     
     def calcular():
-        pass
+        messagebox.showinfo("Nota Difinitiva", "Operacion realizada")
+
+        # variables notas
+        entry_proce_def = float(entry_n1.get())
+        entry_cog_def = float(entry_n2.get())
+        entry_auto_def = float(entry_n3.get())
+        entry_acti_def = float(entry_n4.get())
+        entry_bime_def = float(entry_n5.get())
+
+        entry_not_final = (0.3*entry_proce_def) + (0.3*entry_cog_def) + (0.1*entry_auto_def) + (0.1*entry_acti_def) + (0.2*entry_bime_def)
+
+        if entry_not_final < 30:
+                messagebox.showinfo("Resultado", "su nota definitiva es:  "+str(entry_not_final))
+        else:
+                messagebox.showinfo("Resultado", "su nota definitiva es:  "+str(entry_not_final))
+# boton para convertir
+    bt_convertir = Button(abrir_notas,text="Resultado", command=calcular)
+    bt_convertir.place(x=100, y=400, width=250, height=50)
     
-    bt_notas = Button(abrir_notas, text = "Calcular")
-    bt_notas.place(x=180,y=380)
+
+    
+
 
     abrir_notas.geometry("400x500")
     abrir_notas.title("Notas")
